@@ -49,9 +49,9 @@ public class Fehler{
 
 \begin{itemize}
 	\item Zeile 1: Die Datei muss als \emph{Fehler}.java gespeichert werden: Falls nicht gibt es eine Fehlermeldung vom Compiler.
-	\item Zeile 3: Fehlendes Semikolon: Kann während der Übersetzung vom Compiler erkannt werden
-	\item Zeile 4: Der String \emph{args[0]} kann leer oder nicht in Int umwandelbar sein, falls der Benutzer dem Programm keine/falsche Parameter übergibt: Unvorhersehbarer Laufzeitfehler
-	\item Zeile 5: Es wird auf Index 5 (6te Element) des Arrays zugegriffen, wobei beim Erzeugen (Zeile 3) lediglich Speicher für 5 Elemente angelegt wurde: Vorhersehbarer Laufzeitfehler
+	\item Zeile 3: Fehlendes Semikolon: Kann während der Übersetzung vom Compiler erkannt werden.
+	\item Zeile 4: Der String \emph{args[0]} kann leer oder nicht in Int umwandelbar sein, falls der Benutzer dem Programm keine/falsche Parameter übergibt: Unvorhersehbarer Laufzeitfehler. Die Fehler könnten mit entsprechenden \emph{if}-Abfragen oder mit einem \emph{try-catch}-Block abgefangen werden (relevante Exceptions: ArrayIndexOutOfBounds und NumberFormatException).
+	\item Zeile 5: Es wird auf Index 5 (6te Element) des Arrays zugegriffen, wobei beim Erzeugen (Zeile 3) lediglich Speicher für 5 Elemente angelegt wurde: Vorhersehbarer Laufzeitfehler. Zur Lösung des Problems muss beim Programmieren lediglich darauf geachtet werden, dass der verwendete Index im korrekten Bereich ist.
 \end{itemize}
 
 \end{document}

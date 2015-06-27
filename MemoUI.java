@@ -68,12 +68,19 @@ public class MemoUI{
 	public static boolean createMemo(){	
 		for(int i=0; i<memos.length; i++){
 			if ( memos[i] == null ){
-				String name = Terminal.askString("Enter username: ");
-				String text = Terminal.askString("Enter text for memo: ");
-				memos[i] = new Memo(text, findUser(name));
+				User user = findUser( Terminal.askString("Enter username: ") );
+				
+				if ( user == null ){
+					Terminal.println("Could not find requested user.");
+					return false;
+				}
+				
+				memos[i] = new Memo(Terminal.askString("Enter text for memo: "), user);
 				return true;
 			}
 		}
+		
+		Terminal.println("No empty memo space found.");
 		return false;
 	}
 
@@ -89,7 +96,7 @@ public class MemoUI{
 		
 		for(int i=0; i<memos.length; i++){
 			if( memos[i] != null ){
-				Terminal.println(i + " " + memos[i].getUser().getName());
+				Terminal.println(i + "\t" + memos[i].getUser().getName());
 			}
 		}
 		
